@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Amdek Video-310A demo - Elias Fretwell</title>
+
+        <style>
+            body {
+                background-color: #222;
+                color: white;
+            }
+
+            a {
+                color: #ffbf00;
+            }
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .row > figure {
+                flex: 1;
+                min-width: 400px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            video, img {
+                max-width: 100%;
+                flex: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Amdek Video-310A demo</h1>
+            <p>This is a collection of pictures and videos of my Amdek Video-310A monochrome display adapter monitor displaying from a Raspberry Pi 4B. The code and details of the setup are at <a href="https://github.com/narlotl/amdek-310a">Narlotl/amdek-310a</a>.</p>
+            <b>Contents:</b>
+            <ul>
+                <li><a href="#early-work">Early Work</a></li>
+                <li><a href="#improvements">Improvements</a></li>
+                <li><a href="#showcase">Showcase</a></li>
+                <li style="list-style: none">
+                    <ul>
+                        <li><a href="#shaders">Shaders</a></li>
+                        <li><a href="#movies">Movies</a></li>
+                        <li><a href="#oregon-trail">Oregon Trail</a></li>
+                        <li><a href="#miscellaneous">Miscellaneous</a></li>
+                    </ul>
+                </li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+
+            <section>
+                <h2 id="early-work">Early Work</h2>
+
+                <p>I had some troubles getting the Pi to output correctly at first.</p>
+                <div class="row">
+                    <figure>
+                        <video controls src="bad_apple_beta.mp4"></video>
+                        <figcaption>Messed up timings meant the image got displayed twice.</figcaption>
+                    </figure>
+                </div>
+
+                <p>I started only having pixels be only on or off, which made most things hard to see.</p>
+                <div class="row">
+                    <figure>
+                        <img src="desktop_beta.jpg">
+                        <figcaption>The desktop isn't very useful.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="openttd_game_beta.jpg">
+                        <figcaption>Games are hard to play with so little distinction between elements.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section>
+                <h2 id="improvements">Improvements</h2>
+
+                <p>I was able to fix the timing to get a stable image of the correct size to show up. Things look much better now.</p>
+                <div class="row">
+                    <figure>
+                        <video controls src="bad_apple.mp4"></video>
+                        <figcaption>Only one image shows and there's no foldover (when the image doesn't fit the screen and seems to curl behind).</figcaption>
+                    </figure>
+                </div>
+
+                <p>With dithering and using all three brightness levels, the monitor's limited color palette is much more usable.</p>
+                <div class="row">
+                    <figure>
+                        <img src="xfce.jpg">
+                        <figcaption>The desktop and icons are much easier to see and you can see the wallpaper.</figcaption>
+                    </figure>
+                    <figure>
+                        <video controls src="openttd.mp4"></video>
+                        <figcaption>You can clearly see the train, trees, cities, and industries now.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section>
+                <h2 id="showcase">Showcase</h2>
+
+                <h3 id="shaders">Shaders</h3>
+                <p>I made two shaders, which each have their own applications. The dither shader works great for things with lots of color, like a gradient.</p>
+                <div class="row">
+                    <figure>
+                        <img src="gradient_simple.jpg">
+                        <figcaption>The simple shader just flattens all colors to the closest brightness level.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="gradient_dither.jpg">
+                        <figcaption>The dither shader uses dots to trick our eyes into seeing more colors than reality.</figcaption>
+                    </figure>
+                </div>
+
+                <p>Dithering isn't always necessary or better. Modifying the TTY's color palette so that all colors show up or using the simple shader works great for text.</p>
+                <div class="row">
+                    <figure>
+                        <img src="copypasta_tty.jpg">
+                        <figcaption>Text displayed on the TTY.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="copypasta_simple.jpg">
+                        <figcaption>Text displayed with the simple shader.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="copypasta_dither.jpg">
+                        <figcaption>Text displayed with the dither shader.</figcaption>
+                    </figure>
+                </div>
+
+                <h3 id="movies">Movies</h3>
+                <p>My monitor was manufactured in 1985, so here's some movie clips from that year on it.</p>
+                <div class="row">
+                    <figure>
+                        <video controls src="back_to_the_future.mp4"></video>
+                        <figcaption>Back to the Future, July 1985</figcaption>
+                    </figure>
+                    <figure>
+                        <video controls src="breakfast_club.mp4"></video>
+                        <figcaption>The Breakfast Club, February 1985</figcaption>
+                    </figure>
+                    <figure>
+                        <video controls src="et.mp4"></video>
+                        <figcaption>E.T. the Extra-Terrestrial, July 1985 (re-release)</figcaption>
+                    </figure>
+                </div>
+
+                <h3 id="oregon-trail">Oregon Trail</h3>
+                <p>DOS games are appropriate for a 1980s monitor.</p>
+                <div class="row">
+                    <figure>
+                        <img src="oregon_independence.jpg">
+                    </figure>
+                    <figure>
+                        <img src="oregon_soda_springs.jpg">
+                    </figure>
+                    <figure>
+                        <img src="oregon_the_dalles.jpg">
+                    </figure>
+                </div>
+
+                <h3 id="miscellaneous">Miscellaneous</h3>
+                <div class="row">
+                    <figure>
+                        <img src="fetch.jpg">
+                        <figcaption>Obligatory fetch image.</figcaption>
+                    </figure>
+                    <figure>
+                        <video controls src="doom.mp4"></video>
+                        <figcaption>Yes, it runs Doom.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="monitor_image.jpg">
+                        <figcaption>Using the monitor to display an image of the monitor, with a slight difference in the computer driving it.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="github.jpg">
+                        <figcaption>This project's GitHub page.</figcaption>
+                    </figure>
+                    <figure>
+                        <video controls src="do_or_do_not.mp4"></video>
+                        <figcaption>"Do or do not. There is no try."</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section>
+                <h2 id="conclusion">Conclusion</h2>
+                <p>I've learned a lot about CRTs, the Raspbery Pi, and dithering working on this. I also got to practice soldering in making an easily removable connector from the GPIO to the input cable. This was definitely a challenge, especially since I did a lot of work and testing with a limited display capabilty, but it was still a lot of fun. Thanks for reading!</p>
+                <div class="row">
+                    <figure>
+                        <video controls src="shutdown.mp4"></video>
+                        <figcaption>The shutdown display.</figcaption>
+                    </figure>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
