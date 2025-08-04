@@ -1,5 +1,5 @@
 # amdek-310a
-My setup for driving and Amdek Video-310A MDA monitor with a Raspberry Pi.
+My setup for driving and Amdek Video-310A MDA monitor with a Raspberry Pi. Visit [https://narlotl.github.io/amdek-310a](https://narlotl.github.io/amdek-310a) or the [demo branch](https://github.com/Narlotl/amdek-310a/tree/demo) to see it in action. 
 
 
 ## Setting up
