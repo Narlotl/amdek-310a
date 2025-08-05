@@ -10,7 +10,7 @@
         <meta property="og:title" content="Amdek Video-310A demo" />
         <meta property="og:description" content="A collection of pictures and videos of my Amdek Video-310A monochrome display adapter monitor displaying from a Raspberry Pi 4B.">
         <meta property="og:url" content="https://narlotl.github.io/amdek-310a">
-        <meta property="og:image" content="media/monitor_image.jpg">
+        <meta property="og:image" content="https://narlotl.github.io/media/monitor_image.jpg">
         <meta property="og:image:alt" content="Image of an Amdek Video-310A displayed on itself.">
 
         <style>
@@ -30,36 +30,52 @@
 
             .row > figure {
                 flex: 1;
-                min-width: 400px;
+                min-width: 300px;
                 display: flex;
                 flex-direction: column;
+
+                border: 1px solid #ffbf00;
+                border-radius: 1rem;
+                padding: 0.5rem;
+            }
+
+            figcaption {
+                margin-top: 0.25rem;
             }
 
             video, img {
                 max-width: 100%;
                 flex: 1;
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+            }
+
+            li {
+                min-height: 24px;
             }
         </style>
     </head>
     <body>
         <main>
-            <h1>Amdek Video-310A demo</h1>
-            <p>This is a collection of pictures and videos of my Amdek Video-310A monochrome display adapter monitor displaying from a Raspberry Pi 4B. The code and details of the setup are at <a href="https://github.com/narlotl/amdek-310a">Narlotl/amdek-310a</a>.</p>
-            <b>Contents:</b>
-            <ul>
-                <li><a href="#early-work">Early Work</a></li>
-                <li><a href="#improvements">Improvements</a></li>
-                <li><a href="#showcase">Showcase</a></li>
-                <li style="list-style: none">
-                    <ul>
-                        <li><a href="#shaders">Shaders</a></li>
-                        <li><a href="#movies">Movies</a></li>
-                        <li><a href="#oregon-trail">Oregon Trail</a></li>
-                        <li><a href="#miscellaneous">Miscellaneous</a></li>
-                    </ul>
-                </li>
-                <li><a href="#conclusion">Conclusion</a></li>
-            </ul>
+            <section>
+                <h1 id="demo">Amdek Video-310A demo</h1>
+                <p>This is a collection of pictures and videos of my Amdek Video-310A monochrome display adapter monitor displaying from a Raspberry Pi 4B. The code and details of the setup are at <a href="https://github.com/narlotl/amdek-310a">Narlotl/amdek-310a</a>.</p>
+                <b>Contents:</b>
+                <ul>
+                    <li><a href="#early-work">Early Work</a></li>
+                    <li><a href="#improvements">Improvements</a></li>
+                    <li><a href="#showcase">Showcase</a></li>
+                    <li style="list-style: none">
+                        <ul>
+                            <li><a href="#shaders">Shaders</a></li>
+                            <li><a href="#movies">Movies</a></li>
+                            <li><a href="#oregon-trail">Oregon Trail</a></li>
+                            <li><a href="#miscellaneous">Miscellaneous</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ul>
+            </section>
 
             <section>
                 <h2 id="early-work">Early Work</h2>
@@ -67,7 +83,8 @@
                 <p>I had some troubles getting the Pi to output correctly at first.</p>
                 <div class="row">
                     <figure>
-                        <video aria-label="Video of Bad Apple showing twice" controls poster="media/thumbnails/bad_apple_beta.jpg" src="media/bad_apple_beta.mp4"></video>
+                        <link rel="preload" href="media/thumbnails/bad_apple_beta.jpg" fetchpriority="high">
+                        <video preload="metadata" aria-label="Video of Bad Apple showing twice" controls poster="media/thumbnails/bad_apple_beta.jpg" src="media/bad_apple_beta.mp4"></video>
                         <figcaption>Messed up timings meant the image got displayed twice.</figcaption>
                     </figure>
                 </div>
@@ -146,15 +163,15 @@
                 <div class="row">
                     <figure>
                         <video preload="none" aria-label="Video of Back to the Future with dithering" controls poster="media/thumbnails/back_to_the_future.jpg" src="media/back_to_the_future.mp4"></video>
-                        <figcaption>Back to the Future, July 1985</figcaption>
+                        <figcaption><i>Back to the Future</i>, July 1985</figcaption>
                     </figure>
                     <figure>
                         <video preload="none" aria-label="Video of The Breakfast Club with dithering" controls poster="media/thumbnails/breakfast_club.jpg" src="media/breakfast_club.mp4"></video>
-                        <figcaption>The Breakfast Club, February 1985</figcaption>
+                        <figcaption><i>The Breakfast Club</i>, February 1985</figcaption>
                     </figure>
                     <figure>
                         <video preload="none" aria-label="Video of E.T. with dithering" controls poster="media/thumbnails/et.jpg" src="media/et.mp4"></video>
-                        <figcaption>E.T. the Extra-Terrestrial, July 1985 (re-release)</figcaption>
+                        <figcaption><i>E.T. the Extra-Terrestrial</i>, July 1985 (re-release)</figcaption>
                     </figure>
                 </div>
 
@@ -208,5 +225,9 @@
                 </div>
             </section>
         </main>
+
+        <script>
+            document.querySelectorAll('video').forEach(video => video.addEventListener('mouseenter', () => video.setAttribute('preload', 'metadata')));
+        </script>
     </body>
 </html>
