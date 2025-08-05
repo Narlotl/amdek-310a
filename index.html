@@ -4,6 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Amdek Video-310A demo - Elias Fretwell</title>
+        <description>A collection of pictures and videos of my Amdek Video-310A monochrome display adapter monitor displaying from a Raspberry Pi 4B.</description>
+
+        <meta property="og:title" content="Amdek Video-310A demo" />
+        <meta property="og:description" content="A collection of pictures and videos of my Amdek Video-310A monochrome display adapter monitor displaying from a Raspberry Pi 4B." />
+        <meta property="og:url" content="https://narlotl.github.io/amdek-310a" />
+        <meta property="og:image" content="monitor_image.jpg" />
+        <meta property="og:image:alt" content="Image of an Amdek Video-310A displayed on itself." />
 
         <style>
             body {
@@ -59,7 +66,7 @@
                 <p>I had some troubles getting the Pi to output correctly at first.</p>
                 <div class="row">
                     <figure>
-                        <video controls src="bad_apple_beta.mp4"></video>
+                        <video aria-label="Video of Bad Apple showing twice" controls src="bad_apple_beta.mp4"></video>
                         <figcaption>Messed up timings meant the image got displayed twice.</figcaption>
                     </figure>
                 </div>
@@ -67,11 +74,11 @@
                 <p>I started only having pixels be only on or off, which made most things hard to see.</p>
                 <div class="row">
                     <figure>
-                        <img src="desktop_beta.jpg">
+                        <img alt="Image of a desktop with only two colors" src="desktop_beta.jpg">
                         <figcaption>The desktop isn't very useful.</figcaption>
                     </figure>
                     <figure>
-                        <img src="openttd_game_beta.jpg">
+                        <img alt="Image of an OpenTTD game that is hard to make out" src="openttd_game_beta.jpg">
                         <figcaption>Games are hard to play with so little distinction between elements.</figcaption>
                     </figure>
                 </div>
@@ -83,7 +90,7 @@
                 <p>I was able to fix the timing to get a stable image of the correct size to show up. Things look much better now.</p>
                 <div class="row">
                     <figure>
-                        <video controls src="bad_apple.mp4"></video>
+                        <video aria-label="Video of Bad Apple playing correctly" controls src="bad_apple.mp4"></video>
                         <figcaption>Only one image shows and there's no foldover (when the image doesn't fit the screen and seems to curl behind).</figcaption>
                     </figure>
                 </div>
@@ -91,11 +98,11 @@
                 <p>With dithering and using all three brightness levels, the monitor's limited color palette is much more usable.</p>
                 <div class="row">
                     <figure>
-                        <img src="xfce.jpg">
+                        <img alt="Image of a desktop with dithering applied" src="xfce.jpg">
                         <figcaption>The desktop and icons are much easier to see and you can see the wallpaper.</figcaption>
                     </figure>
                     <figure>
-                        <video controls src="openttd.mp4"></video>
+                        <video aria-label="Viedo of OpenTTD with dithering applied" controls src="openttd.mp4"></video>
                         <figcaption>You can clearly see the train, trees, cities, and industries now.</figcaption>
                     </figure>
                 </div>
@@ -108,11 +115,11 @@
                 <p>I made two shaders, which each have their own applications. The dither shader works great for things with lots of color, like a gradient.</p>
                 <div class="row">
                     <figure>
-                        <img src="gradient_simple.jpg">
+                        <img alt="Image of a gradient with only three color levels" src="gradient_simple.jpg">
                         <figcaption>The simple shader just flattens all colors to the closest brightness level.</figcaption>
                     </figure>
                     <figure>
-                        <img src="gradient_dither.jpg">
+                        <img alt="Image of a gradient that appears smoother with dithering" src="gradient_dither.jpg">
                         <figcaption>The dither shader uses dots to trick our eyes into seeing more colors than reality.</figcaption>
                     </figure>
                 </div>
@@ -120,15 +127,15 @@
                 <p>Dithering isn't always necessary or better. Modifying the TTY's color palette so that all colors show up or using the simple shader works great for text.</p>
                 <div class="row">
                     <figure>
-                        <img src="copypasta_tty.jpg">
+                        <img alt="Image of a quote from Richard Stallman on the TTY" src="copypasta_tty.jpg">
                         <figcaption>Text displayed on the TTY.</figcaption>
                     </figure>
                     <figure>
-                        <img src="copypasta_simple.jpg">
+                        <img alt="Image of a quote from Richard Stallman with the simple shader" src="copypasta_simple.jpg">
                         <figcaption>Text displayed with the simple shader.</figcaption>
                     </figure>
                     <figure>
-                        <img src="copypasta_dither.jpg">
+                        <img alt="Image of a quote from Richard Stallman with the dither shader" src="copypasta_dither.jpg">
                         <figcaption>Text displayed with the dither shader.</figcaption>
                     </figure>
                 </div>
@@ -137,15 +144,15 @@
                 <p>My monitor was manufactured in 1985, so here's some movie clips from that year on it.</p>
                 <div class="row">
                     <figure>
-                        <video controls src="back_to_the_future.mp4"></video>
+                        <video aria-label="Video of Back to the Future with dithering" controls src="back_to_the_future.mp4"></video>
                         <figcaption>Back to the Future, July 1985</figcaption>
                     </figure>
                     <figure>
-                        <video controls src="breakfast_club.mp4"></video>
+                        <video aria-label="Video of The Breakfast Club with dithering" controls src="breakfast_club.mp4"></video>
                         <figcaption>The Breakfast Club, February 1985</figcaption>
                     </figure>
                     <figure>
-                        <video controls src="et.mp4"></video>
+                        <video aria-label="Video of E.T. with dithering" controls src="et.mp4"></video>
                         <figcaption>E.T. the Extra-Terrestrial, July 1985 (re-release)</figcaption>
                     </figure>
                 </div>
@@ -154,36 +161,36 @@
                 <p>DOS games are appropriate for a 1980s monitor.</p>
                 <div class="row">
                     <figure>
-                        <img src="oregon_independence.jpg">
+                        <img alt="Image of the Independence, Missouri screen in Orgeon Trail" src="oregon_independence.jpg">
                     </figure>
                     <figure>
-                        <img src="oregon_soda_springs.jpg">
+                        <img alt="Image of the Soda Springs screen in Orgeon Trail" src="oregon_soda_springs.jpg">
                     </figure>
                     <figure>
-                        <img src="oregon_the_dalles.jpg">
+                        <img alt="Image of the Dalles screen in Orgeon Trail" src="oregon_the_dalles.jpg">
                     </figure>
                 </div>
 
                 <h3 id="miscellaneous">Miscellaneous</h3>
                 <div class="row">
                     <figure>
-                        <img src="fetch.jpg">
+                        <img alt="Image of neofetch output" src="fetch.jpg">
                         <figcaption>Obligatory fetch image.</figcaption>
                     </figure>
                     <figure>
-                        <video controls src="doom.mp4"></video>
+                        <video aria-label="Video of Doom with dithering" controls src="doom.mp4"></video>
                         <figcaption>Yes, it runs Doom.</figcaption>
                     </figure>
                     <figure>
-                        <img src="monitor_image.jpg">
+                        <img alt="Image of the 310A displaying a picture of itself" src="monitor_image.jpg">
                         <figcaption>Using the monitor to display an image of the monitor, with a slight difference in the computer driving it.</figcaption>
                     </figure>
                     <figure>
-                        <img src="github.jpg">
+                        <img alt="Image of the GitHub page on the monitor" src="github.jpg">
                         <figcaption>This project's GitHub page.</figcaption>
                     </figure>
                     <figure>
-                        <video controls src="do_or_do_not.mp4"></video>
+                        <video aria-label="Video of Yoda and Luke Skywalker" controls src="do_or_do_not.mp4"></video>
                         <figcaption>"Do or do not. There is no try."</figcaption>
                     </figure>
                 </div>
@@ -194,7 +201,7 @@
                 <p>I've learned a lot about CRTs, the Raspbery Pi, and dithering working on this. I also got to practice soldering in making an easily removable connector from the GPIO to the input cable. This was definitely a challenge, especially since I did a lot of work and testing with a limited display capabilty, but it was still a lot of fun. Thanks for reading!</p>
                 <div class="row">
                     <figure>
-                        <video controls src="shutdown.mp4"></video>
+                        <video aria-label="Video of the shutdown process on the monitor" controls src="shutdown.mp4"></video>
                         <figcaption>The shutdown display.</figcaption>
                     </figure>
                 </div>
